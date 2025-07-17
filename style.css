@@ -1,0 +1,179 @@
+@import url('https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root {
+    --orange-1: #F87923;
+    --orange-2: #FFB684;
+
+    --blue-1: #4128BD;
+    --blue-2: #766D9E;
+
+    --white-1: #FFFFFF;
+    --white-2: #EEEEEE;
+
+    --main-color: var(--white-1);
+    --secondary-color: var(--blue-1);
+    --active-button: var(--white-1);
+    --inactive-button: var(--white-2);
+    --switch-color: var(--blue-1);
+
+    font-family: "B612 Mono", monospace;
+    font-style: normal;
+
+    --regular-text: 400;
+    --bold-text: 700;
+}
+
+.dark-theme {
+    --main-color: var(--blue-1);
+    --secondary-color: var(--white-1);
+    --active-button: var(--blue-1);
+    --inactive-button: var(--blue-2);
+    --switch-color: var(--white-2);
+}
+
+body {
+    margin: 0;
+}
+
+#content {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+}
+
+.content-left {
+    width: min(50vw, 640px);
+    height: 100%;
+
+    color: var(--secondary-color);
+    background-color: var(--main-color);
+}
+
+.content-right {
+    width: max(50vw, calc(100vw - 640px));
+    height: 100%;
+
+    color: var(--white-1);
+    background-color: var(--orange-1);
+}
+
+.content-right h1 {
+    color: var(--blue-1);
+}
+
+.content-right > div {
+    padding: 2rem;
+}
+
+.content-left-top {
+    display: flex;
+}
+
+#profile-photo {
+    width: 60vh;
+    height: auto;
+
+    border-radius: 0 10px 10px 0;
+    box-shadow: 0 4px;
+    margin: 80px 0;
+}
+
+#theme-switch {
+    width: max-content;
+    margin: 0 auto;
+    align-self: flex-start;
+
+    cursor: pointer;
+}
+
+#theme-switch line {
+    stroke: var(--switch-color);
+}
+#theme-switch path {
+    fill: var(--switch-color);
+}
+
+.content-left-bottom {
+    display: flex;
+    margin-left: 40px;
+
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contact-section {
+    display: flex;
+    flex-direction: column;
+
+    gap: 3rem;
+}
+
+.contact-section h1,
+.contact-section p {
+    margin: 0;
+}
+
+.contact-section p {
+    color: var(--orange-1);
+    font-weight: var(--bold-text);
+}
+
+.contact-section a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    margin-bottom: 0.5rem;
+}
+
+.contact-section span {
+    align-self: flex-end;
+}
+
+.button-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.button-group button{
+    color: var(--inactive-button);
+    font-weight: var(--bold-text);
+    font-size: 1.5rem;
+    text-align: start;
+
+    border: 0px;
+    border-radius: 10px 0 0 10px;
+
+    background-color: var(--orange-2);
+    padding: 8px;
+}
+
+.button-group :hover {
+    color: var(--active-button)
+}
+
+.button-group .button--selected {
+    color: var(--active-button);
+    background-color: var(--orange-1);
+}
+
+.tab-content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+}
+
+.content--hidden {
+    display: none;
+}
+
+h1 {
+    font-size: 2rem;
+}
+
+a {
+    all: unset;
+    cursor: pointer;
+}
