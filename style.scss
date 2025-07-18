@@ -183,10 +183,6 @@ body {
     > div {
         padding: 2rem;
     }
-    
-    &--hidden {
-        display: none;
-    }
 
     &__tab {
         display: flex;
@@ -202,5 +198,9 @@ body {
             margin-bottom: 0;
             color: var(--accent-color);
         }
+    }
+
+    &--hidden {
+        display: none;
     }
 }

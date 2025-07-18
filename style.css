@@ -137,9 +137,6 @@ body h1 {
 .content-right > div {
   padding: 2rem;
 }
-.content-right--hidden {
-  display: none;
-}
 .content-right__tab {
   display: flex;
   flex-direction: column;
@@ -150,6 +147,9 @@ body h1 {
   font-weight: bold;
   margin-bottom: 0;
   color: var(--accent-color);
+}
+.content-right--hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=style.css.map */
