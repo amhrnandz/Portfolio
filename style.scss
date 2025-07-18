@@ -1,0 +1,180 @@
+@import url('https://fonts.googleapis.com/css2?family=B612+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+$orange-1: #F87923;
+$orange-2: #FFB684;
+
+$dark-blue-1: #1c0741;
+$dark-blue-2: #2b174f;
+$blue-1: #4128BD;
+$blue-2: #766D9E;
+
+$white-1: #FFFFFF;
+$white-2: #EEEEEE;
+
+:root {
+    --main-color: #{$white-1};
+    --secondary-color: #{$blue-1};
+    --active-button: #{$white-1};
+    --inactive-button: #{$white-2};
+    --switch-color: #{$blue-1};
+
+    font-family: "B612 Mono", monospace;
+    font-style: normal;
+}
+
+.dark-theme {
+    --main-color: #{$blue-1};
+    --secondary-color: #{$white-1};
+    --active-button: #{$blue-1};
+    --inactive-button: #{$blue-2};
+    --switch-color: #{$white-2};
+}
+
+body {
+    margin: 0;
+}
+
+#content {
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+}
+
+.content-left {
+    width: min(50vw, 640px);
+    height: 100%;
+
+    color: var(--secondary-color);
+    background-color: var(--main-color);
+
+    &-top {
+        display: flex;
+    }
+
+    &-bottom {
+        display: flex;
+        margin-left: 40px;
+
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    #profile-photo {
+        width: 60vh;
+        height: auto;
+
+        border-radius: 0 10px 10px 0;
+        box-shadow: 0 4px;
+        margin: 80px 0;
+    }
+
+    #theme-switch {
+        width: max-content;
+        margin: 0 auto;
+        align-self: flex-start;
+
+        cursor: pointer;
+
+        line {
+            stroke: var(--switch-color);
+        }
+
+        path {
+            fill: var(--switch-color);
+        }
+    }
+
+    .contact-section {
+        display: flex;
+        flex-direction: column;
+
+        gap: 3rem;
+
+        h1, p {
+            margin: 0;
+        }
+
+        p {
+            color: $orange-1;
+            font-weight: bold;
+        }
+
+        &__links {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            a {
+                all: unset;
+                cursor: pointer;
+
+                display: flex;
+                align-items: center;
+                gap: 10px;
+            }
+
+            span {
+                align-self: flex-end;
+            }
+        }
+    }
+
+    .button-group {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+
+        button {
+            all: unset;
+            color: var(--inactive-button);
+            font-size: 1rem;
+            text-align: start;
+
+            border: 0px;
+            border-radius: 10px 0 0 10px;
+
+            background-color: $orange-2;
+            padding: 8px;
+
+            &:hover {
+                color: var(--active-button)
+            }
+        }
+
+        .button--selected {
+            color: var(--active-button);
+            background-color: $orange-1;
+        }
+    }
+}
+
+.content-right {
+    width: max(50vw, calc(100vw - 640px));
+    height: 100%;
+
+    color: $white-1;
+    background-color: $orange-1;
+
+    h1 {
+        color: $blue-1;
+    }
+
+    > div {
+        padding: 2rem;
+    }
+
+    &__tab {
+        display: flex;
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    &--hidden {
+        display: none;
+    }
+}
+
+h1 {
+    font-size: 2rem;
+}

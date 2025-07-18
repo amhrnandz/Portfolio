@@ -15,12 +15,10 @@ buttons.forEach(selected => selected.addEventListener("click", (e) => {
         const content = document.getElementById(`content-${button_id}`);
         if (button === selected) {
             button.classList.add("button--selected");
-            content.classList.remove("content--hidden");
+            content.classList.remove("content-right--hidden");
         } else {
             button.classList.remove("button--selected");
-            content.classList.add("content--hidden");
+            content.classList.add("content-right--hidden");
         }
     })
-})
-
-)
+}))
